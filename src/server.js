@@ -1,1 +1,3 @@
-// colocar app listem aqui
+import app from './app';
+
+app.listen(3000);

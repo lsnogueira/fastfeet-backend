@@ -1,18 +1,23 @@
-// ponto de start do meu app, chamar midlewares e routes com use
 import express from 'express';
 
 import './database';
+import routes from './routes';
 
 class App {
   constructor() {
     this.server = express();
 
     this.middlewares();
+    this.routes();
   }
 
   middlewares() {
     this.server.use(express.json());
   }
+
+  routes() {
+    this.server.use(routes);
+  }
 }
 
-export default App().server;
+module.exports = new App().server;
