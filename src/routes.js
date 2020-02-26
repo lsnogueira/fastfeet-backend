@@ -6,4 +6,7 @@ const routes = new Router();
 
 routes.post('/session', SessionController.store);
 
+routes.post('/recipients',);
+routes.put('/recipients',);
+
 module.exports = routes;
