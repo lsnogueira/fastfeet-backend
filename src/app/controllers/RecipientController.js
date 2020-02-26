@@ -23,7 +23,7 @@ class RecipientController {
     return res.json(recipient);
   }
 
-  async update() {}
+  // async update() {}
 }
 
 export default new RecipientController();
