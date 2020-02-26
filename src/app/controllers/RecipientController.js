@@ -23,7 +23,22 @@ class RecipientController {
     return res.json(recipient);
   }
 
-  // async update() {}
+  async update(req, res) {
+    const { id } = req.body;
+
+    if (!id) {
+      return res.status(400).json({ error: 'Validation fails' });
+    }
+
+    const recipient = await Recipient.findOne({ where: id });
+
+    if (!recipient) {
+      return res.status(404).json({ error: 'Recipient not found!' });
+    }
+
+    const result = await recipient.update(req.body);
+    return res.json(result);
+  }
 }
 
 export default new RecipientController();
