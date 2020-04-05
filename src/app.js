@@ -26,8 +26,3 @@ class App {
 }
 
 module.exports = new App().server;
-
-/*
-  TODO: ADICIONAR YULP VALIDATION E SEPARAR MIDLEWARES E CONTINUAR DESAFIO
-
-*/
