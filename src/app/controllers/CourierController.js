@@ -9,6 +9,7 @@ class CourierController {
       email: Yup.string()
         .email()
         .required(),
+      avatar_id: Yup.number().notRequired(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -33,6 +34,18 @@ class CourierController {
       name,
       email,
     });
+  }
+
+  async index(req, res) {
+    const { id } = req.params;
+
+    const courier = await Courier.findByPk(id);
+
+    if (!courier) {
+      return res.status(400).json({ message: 'Delivery Man not found' });
+    }
+
+    return res.json(courier);
   }
 }
 

@@ -21,6 +21,7 @@ routes.post('/recipients', RecipientController.store);
 routes.put('/recipients', RecipientController.update);
 
 routes.post('/couriers', CourierController.store);
+routes.get('/couriers/:id', CourierController.index);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
